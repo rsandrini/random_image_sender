@@ -5,9 +5,14 @@ from datetime import datetime
 from discord.ext import commands
 import discord
 from get_file import rdm
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 # read our environment variables
-with open("env.json", "r") as env:
+with open("./env.json", "r") as env:
     ENV = json.load(env)
 
 # set our environment variables
